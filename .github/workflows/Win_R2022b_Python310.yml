@@ -17,7 +17,10 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - run: choco install python --version 3.10
+      - name: Setup Python
+        uses: actions/setup-python@v3.1.3
+        with:
+           python-version: 3.10
       
       - name: Set up MATLAB
         uses: matlab-actions/setup-matlab@v1
