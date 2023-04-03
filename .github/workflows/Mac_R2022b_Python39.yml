@@ -20,7 +20,7 @@ jobs:
       - run: brew update
       - run: brew install pyenv
       - run: pyenv install 3.9
-      - run: pyenv 3.9
+      - run: pyenv global 3.9
       
       - name: Set up MATLAB
         uses: matlab-actions/setup-matlab@v1
