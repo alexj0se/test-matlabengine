@@ -3,8 +3,8 @@
 name:  Test Mac R2022b Python 3.9
 
 on:
-  push:
-    branches: [ "main" ]
+  #push:
+   # branches: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -19,6 +19,7 @@ jobs:
     steps:
       - run: brew update
       - run: brew install pyenv
+      - run: pyenv install 3.9
       - run: pyenv 3.9
       
       - name: Set up MATLAB
