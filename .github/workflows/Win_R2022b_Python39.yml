@@ -21,7 +21,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - run: choco install python --version 3.9.*
+      - run: choco install python --version 3.9
       
       - name: Set up MATLAB
         uses: matlab-actions/setup-matlab@v1
