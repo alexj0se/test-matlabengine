@@ -1,0 +1,31 @@
+# This is a basic workflow to help you get started with Actions
+
+name:  Test Mac R2022b Python 3.9
+
+on:
+  #push:
+   # branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  test-python-engine:
+    runs-on: macos-latest
+
+    steps:
+      - run: brew update
+      - run: brew install pyenv
+      - run: pyenv install 3.9
+      - run: pyenv global 3.9
+      
+      - name: Set up MATLAB
+        uses: matlab-actions/setup-matlab@v1
+        with:
+           release: R2022b
+
+      - name: Run tests
+        uses: matlab-actions/run-tests@v1
