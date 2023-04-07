@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        python: [3.9, 3.8]
+        python: ["3.10", "3.9", "3.8"]
         matlab: [R2022b, R2023a]
     
     runs-on: ${{ matrix.os }}
@@ -32,6 +32,8 @@ jobs:
         uses: matlab-actions/setup-matlab@v1
         with:
            release: ${{ matrix.matlab }}
+
+      - uses: actions/checkout@v3
 
       - name: Run tests
         uses: matlab-actions/run-tests@v1
