@@ -7,7 +7,7 @@ classdef tInstall < matlab.unittest.TestCase
 
     methods (Test)
         function installNoVersionSpecified(testCase)
-		    disp(string(ver().Version))
+		    disp(ver().Version)
             assumeEqual(testCase, testCase.MATLABRelease, '9.14')
             [status, out] = system("pip install matlabengine")
 			verifyEqual(testCase, status, 0);
