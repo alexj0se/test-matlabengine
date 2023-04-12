@@ -2,13 +2,13 @@ classdef tInstall < matlab.unittest.TestCase
 % Verify installation of matlab engine
 
     properties (Constant)
-        MATLABVersion = getenv('MATLABVersion')
+        MATLABVersion = string(ver('MATLAB').Version)
+        MATLABRelease = erase(ver('MATLAB').Release,{'(',')'})
     end
 
     methods (Test)
         function installNoVersionSpecified(testCase)
-		    disp(ver().Version)
-            assumeEqual(testCase, testCase.MATLABRelease, '9.14')
+            assumeEqual(testCase, testCase.MATLABRelease, 'R2023a')
             [status, out] = system("pip install matlabengine")
 			verifyEqual(testCase, status, 0);
 
