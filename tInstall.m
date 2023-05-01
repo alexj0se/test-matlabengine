@@ -1,6 +1,7 @@
 classdef tInstall < matlab.unittest.TestCase
 % Verify installation of matlab engine
 
+% Copyright 2023 Mathworks, Inc.
     properties (Constant)
         MATLABVersion = string(ver('MATLAB').Version)
         MATLABRelease = erase(ver('MATLAB').Release,{'(',')'})
@@ -33,7 +34,7 @@ classdef tInstall < matlab.unittest.TestCase
         % Verify installation by calling functions in matlab engine
         % Share this session and see if find_matlab can find it.
             sharedEngineName = matlab.engine.engineName;
-            if isempty(sharedEngineName)
+            if (sharedEngineName == "")
                 sharedEngineName = "MATLAB_tInstall";
                 matlab.engine.shareEngine(sharedEngineName)
             end
