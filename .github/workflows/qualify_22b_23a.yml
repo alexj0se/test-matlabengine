@@ -1,10 +1,11 @@
-# Run tInstall on Ubuntu, Windows and MacOS against python versions 3.10, 3.9 and 3.8
+# Run tInstall on Ubuntu against python versions 3.10, 3.9 and 3.8
 
 name: Test R2022b R2023a
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
