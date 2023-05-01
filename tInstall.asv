@@ -33,7 +33,7 @@ classdef tInstall < matlab.unittest.TestCase
         function verifyInstallation(testCase)
         % Verify installation by calling functions in matlab engine
         % Share this session and see if find_matlab can find it.
-            sharedEngineName = string(matlab.engine.engineName);
+            sharedEngineName = matlab.engine.engineName;
             if (sharedEngineName == "")
                 sharedEngineName = "MATLAB_tInstall";
                 matlab.engine.shareEngine(sharedEngineName)
